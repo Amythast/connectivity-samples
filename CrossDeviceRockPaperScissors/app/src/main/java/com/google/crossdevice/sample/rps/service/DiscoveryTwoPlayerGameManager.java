@@ -66,7 +66,7 @@ public final class DiscoveryTwoPlayerGameManager implements GameManager {
     devicePickerLauncher =
         discovery.registerForResult(
             (ActivityResultCaller) context,
-            participants -> {
+                participants -> {
               for (Participant participant : participants) {
                 Log.d(TAG, "selected participant=" + participant);
                 openRemoteConnection(participant);

@@ -45,6 +45,7 @@
     <string name="action_two_player_sessions_api">Two Players (Sessions API)</string>
     <string name="action_single_player_sessions_api">Single Player (Sessions API)</string>
     <string name="action_multiplayer_sessions_api">Multiplayer (Coming soon)</string>
+    <string name="check_google_play_service">Check Google Play Service</string>
 
     <string name="choice_rock">Rock</string>
     <string name="choice_paper">Paper</string>

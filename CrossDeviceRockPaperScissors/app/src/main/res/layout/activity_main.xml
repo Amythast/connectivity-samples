@@ -54,4 +54,13 @@
         android:text="@string/action_multiplayer_sessions_api"
         style="@style/Widget.AppCompat.Button.Colored"/>
 
+    <Button
+        android:id="@+id/check_google_play_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onModeSelected"
+        android:text="@string/check_google_play_service"
+        style="@style/Widget.AppCompat.Button.Colored"/>
+
+
 </LinearLayout>

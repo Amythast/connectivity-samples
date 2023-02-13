@@ -19,8 +19,13 @@ package com.google.crossdevice.sample.rps.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.crossdevice.sample.rps.R;
 
 /** Activity for selecting the kind of Rock Paper Scissors game to play */
@@ -47,6 +52,28 @@ public final class MainActivity extends AppCompatActivity {
       return new Intent(this, SessionsTwoPlayerActivity.class);
     } else if (id == R.id.single_player_sessions_api) {
       return new Intent(this, SessionsSinglePlayerActivity.class);
+    } else if (id == R.id.check_google_play_service) {
+      int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(getApplicationContext());
+      switch (available) {
+        case ConnectionResult.SUCCESS:
+          Toast.makeText(this, "SUCCESS", Toast.LENGTH_SHORT).show();
+          break;
+        case ConnectionResult.SERVICE_MISSING:
+          Toast.makeText(this, "SERVICE_MISSING", Toast.LENGTH_SHORT).show();
+          break;
+        case ConnectionResult.SERVICE_UPDATING:
+          Toast.makeText(this, "SERVICE_UPDATING", Toast.LENGTH_SHORT).show();
+          break;
+        case ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED:
+          Toast.makeText(this, "SERVICE_VERSION_UPDATE_REQUIRED", Toast.LENGTH_SHORT).show();
+          break;
+        case ConnectionResult.SERVICE_DISABLED:
+          Toast.makeText(this, "SERVICE_DISABLED", Toast.LENGTH_SHORT).show();
+          break;
+        case ConnectionResult.SERVICE_INVALID:
+          Toast.makeText(this, "SERVICE_INVALID", Toast.LENGTH_SHORT).show();
+          break;
+      }
     }
     return null;
   }
